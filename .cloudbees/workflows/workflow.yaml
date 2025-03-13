@@ -33,10 +33,9 @@ jobs:
         with:
           destination: 020229604682.dkr.ecr.us-east-1.amazonaws.com/actions/assets-findsecbugs-scanner:qe-bdgolang
           tar-path: container-image.tar
-          build-args: USER=cbp,TOKEN=${{ secrets.GH_SECURITY_PAT }}
       - id: upload-binary
         name: Upload binary using action
-        uses: calculi-corp/assets-plugin-chain-utils/upload-binary@v1
+        uses: cloudbees-io/asset-chain-utils/upload-binary@v1
         with:
           file-path: container-image.tar
           file-type: BINARY_CONTAINER
